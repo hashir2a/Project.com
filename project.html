@@ -1,0 +1,116 @@
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Features Showcase</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>JavaScript Features Showcase</h1>
+  </header>
+  <main>
+    <section id="dropdown-section">
+      <h2>Dropdowns</h2>
+      <div class="dropdown">
+        <button onclick="toggleDropdown()">Toggle Dropdown</button>
+        <ul id="dropdown-menu">
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+        </ul>
+      </div>
+    </section>
+    <section id="info-display-section">
+      <h2>Information Display</h2>
+      <div id="info-container">
+        <button onclick="showInfo()">Show Information</button>
+        <p id="info-text"></p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+```css
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropdown ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.dropdown ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#info-container button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#info-text {
+  display: none;
+  margin-top: 10px;
+}
+```
+```javascript
+function toggleDropdown() {
+  var dropdownMenu = document.getElementById("dropdown-menu");
+  dropdownMenu.style.display = dropdownMenu.style.display === "none" ? "block" : "none";
+}
+
+function showInfo() {
+  var infoText = document.getElementById("info-text");
+  infoText.style.display = "block";
+  infoText.innerHTML = "This is some information to display.";
+}
+```
